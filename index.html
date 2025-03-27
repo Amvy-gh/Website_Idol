@@ -9,38 +9,13 @@
         crossorigin="anonymous">
         <link rel="stylesheet" href="styles.css">
     </head>
+    
     <body>
-        <header>
-            <div class="header d-flex align-items-center justify-content-between">
-                <div class="logo">
-                    <img src="file/avicii.gif" alt="Logo">
-                </div>
-                <div class="text-center flex-grow-1">
-                    <h1 class="mb-0">"In Memory of Avicii"</h1>
-                </div>
-            </div>
-            <nav class="navbar-horizontal">
-                <ul class="nav-list d-flex justify-content-center">
-                    <li class="nav-item"><a href="index.html">Idol</a></li>
-                    <li class="nav-item"><a href="form.html">Form</a></li>
-                    <li class="nav-item"><a href="tabel.html">Table</a></li>
-                </ul>
-            </nav>
-        </header>
-
-        <div class="container-fluid">
+        <div id="header-placeholder"></div>
             <div class="row">
-
                 <div class="col-md-2 sidebar">
-                    <nav class="navbar">
-                        <ul class="list-group">
-                            <li style="text-align: center;"><a href="index.html" class="list-group-item active">Idol</a></li>
-                            <li style="text-align: center;"><a href="form.html" class="list-group-item">Forms</a></li>
-                            <li style="text-align: center;"><a href="tabel.html" class="list-group-item">Table</a></li>
-                        </ul>
-                    </nav>
+                    <div id="sidebar-placeholder"></div>
                 </div>
-
                 <div class="col-md-10 content">
                     <div itemscope itemtype="http://schema.org/Person" class="biography-section">
                         <img src="file/photo1.png" alt="Avicii Image" itemprop="image">
@@ -115,7 +90,6 @@
                                     </audio>
                                 </div>
                             </div>
-                    
 
                             <div class="music-player">
                                 <img src="file/photoo5.png" alt="Waiting for Love Cover" >
@@ -129,8 +103,7 @@
                             </div>
                         </div>
                     </div>
-                    
-
+                
                     <div class="journey-section " itemscope itemtype="http://schema.org/Event">
                         <h2 style="text-decoration: underline;">Journey of Avicii</h2>
                         <div class="timeline">
@@ -204,6 +177,23 @@
                 </div>
             </div>
         </div>
+
+        <script>
+            fetch('header.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('header-placeholder').innerHTML = data;
+                })
+                .catch(error => console.error('Error loading header:', error));
+    
+            fetch('sidebar.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('sidebar-placeholder').innerHTML = data;
+                })
+                .catch(error => console.error('Error loading sidebar:', error));
+        </script>
+
         <footer class="container-fluid">
             <div class="footer">
                 <p style="text-decoration: none; margin: 0;">&copy; 2024 In Memory of Avicii | All Rights Reserved</p>

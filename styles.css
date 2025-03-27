@@ -3,6 +3,7 @@ body, html {
   margin: 0;
   padding: 0;
   width: 100%;
+  border: 1px solid black;
 }
 
 body {
@@ -280,17 +281,11 @@ footer {
   background-color: black;
   color: white;
   text-align: center;
-  padding: 7px 0;
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  padding: 10px 0;
+  position: absolute;
   width: 200%;
 }
 
-footer p {
-  margin: 0;
-}
 
 .navbar-horizontal {
   background-color: #000; 

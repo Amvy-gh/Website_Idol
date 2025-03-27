@@ -9,35 +9,14 @@
     crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">   
 </head>
+
 <body>
-    <header>
-        <div class="header d-flex align-items-center justify-content-between">
-            <div class="logo">
-                <img src="file/avicii.gif" alt="Logo">
-            </div>
-            <div class="text-center flex-grow-1">
-                <h1 class="mb-0">"In Memory of Avicii"</h1>
-            </div>
-            <nav class="navbar-horizontal">
-                <ul class="nav-list d-flex justify-content-center">
-                    <li class="nav-item"><a href="index.html">Idol</a></li>
-                    <li class="nav-item"><a href="form.html">Form</a></li>
-                    <li class="nav-item"><a href="tabel.html">Table</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>    
+    <div id="header-placeholder"></div>   
 
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-2 sidebar">
-                <nav class="navbar">
-                    <ul class="list-group">
-                        <li style="text-align: center;"><a href="index.html" class="list-group-item">Idol</a></li>
-                        <li style="text-align: center;"><a href="form.html" class="list-group-item active">Forms</a></li>
-                        <li style="text-align: center;"><a href="tabel.html" class="list-group-item">Table</a></li>
-                    </ul>
-                </nav>
+                <div id="sidebar-placeholder"></div>
             </div>
 
             <div class="col-md-10 content" itemscope itemtype="http://schema.org/WebPage">
@@ -85,6 +64,22 @@
             </div>
         </div>
     </div>
+
+    <script>
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading header:', error));
+
+        fetch('sidebar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('sidebar-placeholder').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading sidebar:', error));
+    </script>
 
     <footer class="container-fluid">
         <div class="footer">
