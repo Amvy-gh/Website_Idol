@@ -77,6 +77,10 @@ html, body {
   color: rgb(255, 255, 255);
 }
 
+.list-group > li {
+  list-style-type: none;
+}
+
 /* 4. Main Content */
 .content {  
   max-width: 83.3333%;
