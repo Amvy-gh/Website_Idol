@@ -8,9 +8,6 @@
     rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" 
     crossorigin="anonymous">
     <link rel="stylesheet" href="/style/styles.css">
-    <style>
-        
-    </style> 
 </head>
 
 <body>
@@ -86,9 +83,22 @@
             .then(response => response.text())
             .then(data => {
                 document.getElementById('sidebar-placeholder').innerHTML = data;
+
+                highlightActiveMenu();
             })
             .catch(error => console.error('Error loading sidebar:', error));
-        
+
+        // Fungsi untuk menandai menu aktif
+        function highlightActiveMenu() {
+            const currentPage = window.location.pathname.split("/").pop();
+            const menuItems = document.querySelectorAll(".list-group-item");
+
+            menuItems.forEach(item => {
+                if (item.getAttribute("href") === currentPage) {
+                    item.classList.add("active");
+                }
+            });
+        }
         fetch('/layout/footer.html')
             .then(response => response.text())
             .then(data => {
