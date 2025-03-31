@@ -449,8 +449,8 @@ table {
   /* Add a top navbar */
   .top-navbar {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     background-color: black;
     padding: 10px 20px;
     color: white;
@@ -461,9 +461,15 @@ table {
     z-index: 300;
   }
 
-  .top-navbar .menu-toggle {
-    font-size: 24px;
-    cursor: pointer;
+  .header-text-responsive {
+      flex: 1;
+      text-align: center;
+  }
+
+  .menu-toggle {
+    margin-top: -7px;
+      font-size: 24px;
+      cursor: pointer;
   }
 
   .top-navbar .menu {
@@ -485,23 +491,24 @@ table {
     color: white;
     padding: 10px;
     text-decoration: none;
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid rgb(109, 106, 117);
   }
 
   .top-navbar .menu a:hover {
     background-color: gray;
   }
 
-  /* Adjust content padding to avoid overlap */
   .content {
     padding-top: 60px;
   }
 
-  .text-responsivee{
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
+  .header-text-responsive{
+    padding: 5px;
     font-style: italic;
     font-family: 'Playfair Display', serif;;
+  }
+
+  .photos-section .row .col-md-4:nth-child(2) p {
+    margin-bottom: -100px;
   }
 }
