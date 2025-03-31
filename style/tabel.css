@@ -1,0 +1,56 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    text-align: left;
+}
+
+/* Header Styling */
+th {
+    position: sticky;
+    top: 0;
+    background-color: #000000;
+    color: white;
+    padding: 12px;  
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Table Cells */
+td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+/* Zebra Striping */
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Hover Effect */
+tr:hover {
+    background-color: #0b0033;
+    color: white;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+/* Scrollable Table */
+.table-wrapper {
+    max-height: 463px;
+    overflow-y: auto;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    table {
+        font-size: 12px;
+    }
+    th, td {
+        padding: 8px;
+    }
+}

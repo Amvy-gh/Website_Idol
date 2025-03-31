@@ -7,9 +7,11 @@
 }
 
 html, body {
-  width: 100%;
-  background-color: #ffffff;
-  overflow-x: hidden;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 /* 2. Header and Logo */
@@ -103,6 +105,10 @@ html, body {
 .content h1 {
   font-size: clamp(20px, 4vw, 28px);
   margin-bottom: 20px;
+}
+
+.container-fluid {
+  flex: 1;
 }
 
 /* 5. Biography Section */
@@ -347,7 +353,7 @@ html, body {
 
 /* 11. Footer */
 .footer {
-  background-color: rgb(0, 0, 0); 
+  background-color: black;
   color: white;
   padding: 15px;
   text-align: center;
@@ -364,16 +370,10 @@ html, body {
   margin-bottom: 1rem;
 }
 
-/* 13. Table Styles */
-.table-wrapper {
-  max-height: 450px;
-  overflow-y: auto;
-  overflow-x: auto;
-  width: 100%;
-}
-
-table {
-  min-width: 100%;
+.form-control:focus {
+  outline: none;
+  box-shadow: none;
+  border-color: black;
 }
 
 /* Media Queries for Responsive Design */
@@ -411,7 +411,7 @@ table {
     max-width: 83.3333%;
     border-left: 2px solid black;
   }
-  
+    
   .favorite-music-section .music-wrapper {
     flex-direction: row;
     justify-content: space-between;
@@ -446,7 +446,7 @@ table {
   .sidebar{
     display: none;
   }
-  /* Add a top navbar */
+  /* Add a top navbar */  
   .top-navbar {
     display: flex;
     align-items: center;
@@ -467,7 +467,7 @@ table {
   }
 
   .menu-toggle {
-    margin-top: -7px;
+      margin-top: -7px;
       font-size: 24px;
       cursor: pointer;
   }
@@ -510,5 +510,97 @@ table {
 
   .photos-section .row .col-md-4:nth-child(2) p {
     margin-bottom: -100px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  html, body, .container-fluid {
+    height: 100%;
+    min-height: 100vh;
+    width: 100%;
+  }
+  
+  .content {
+    min-height: 100vh;
+    padding-bottom: 50px;
+  }
+
+  /* Sidebar adjustments for tablet */
+  .sidebar {
+    width: 25%; 
+    position: fixed;
+    top: 115px;
+    border: none;
+  }
+
+  .navbar{
+    border-color: transparent;
+  }
+  
+  .list-group-item {
+    padding: 12px 20px;
+    font-size: 16px;
+  }
+  
+  /* Content adjustments */
+  .content {
+    margin-left: 25%;
+    max-width: 75%;
+  }
+  
+  /* Biography section */
+  .biography-section {
+    flex-direction: row;
+    gap: 15px;
+  }
+  
+  .biography-section img {
+    max-width: 200px;
+  }
+  
+  /* Music section */
+  .music-section .row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .music-section .col-md-4 {
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding: 0 10px;
+    margin-bottom: 20px;
+  }
+  
+  /* Photos section - also 2 per row */
+  .photos-section .col-md-4 {
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding: 0 10px;
+    margin-bottom: 25px;
+  }
+  
+  /* Photo height adjustment */
+  .photo {
+    height: 400px !important;
+  }
+  
+  /* Favorite music section */
+  .favorite-music-section .music-wrapper {
+    flex-direction: column;
+    gap: 25px;
+  }
+  
+  .favorite-music-section .music-player {
+    flex-direction: row;
+    width: 100%;
+  }
+  
+  /* Timeline adjustments */
+  .timeline {
+    padding-left: 30px;
+  }
+  
+  .timeline-item h3 {
+    font-size: 18px;
   }
 }
